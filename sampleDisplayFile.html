@@ -1,0 +1,36 @@
+<html><head><title>Sample</title></head><body>
+
+<script>
+var found = undefined;
+var foundMessage = "<font color='#FF0000'>Block $$$BLOCK$$$, Lot $$$LOT$$$ is in our liquifaction database. Please contact City Planning department to find out what is required.</font>";
+var notFoundMessage = "<font color='#009900'>Block $$$BLOCK$$$, Lot $$$LOT$$$ is not in our database as being affected by liquifaction issues at this time.</font>";
+
+function test()  {
+	var message = "";
+	if (found == undefined)	{
+		found = false;
+	}
+	if (found == true)	{
+		message = foundMessage;
+		found = false;
+	} else {
+		message = notFoundMessage;
+		found = true;
+	}
+
+	var results = document.getElementById("results");
+	results.innerHTML = message;
+}
+</script>
+
+<table width="200"><tr><td><input width="50"/></td><td><input /></td></tr>
+<tr><td colspan="2"><button onclick="test();">Search</button></td></tr>
+<tr><td colspan="2">
+
+<table width="100%" border="1"><tr><td>
+<div align="center" id="results">Search records to find out whether your house is affected by liquifaction issues. (Just click on the button multiple times on this sample version to view possible result messages.)</div>
+</td></tr>
+</table> 
+</td></tr></table>
+
+</body></html>
