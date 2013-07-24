@@ -9,17 +9,10 @@ function checkLiquifactionStatus() {
 	$.getJSON('./data.json', function(data) {
 			console.log("success");
 		}).done(function( userBlockLot, json ) {
-			
 			if ( userBlockLot in json ) {
 				return true;
 			} else {
 				return false;
 			}
 		});
-};
-
-
-
-//pull in info from form
-
-//return
+}
