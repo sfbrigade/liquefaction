@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Liquifaction Check 4000</title>
+    <script src="./jquery-1.9.1.min.js" type="text/javascript"></script>
+    <!-- <script src="/vendor/bootstrap/js/bootstrap.min.js"></script> -->
+    <script src="./checker.js"></script>
+    <!-- <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css"> -->
+  <!-- <link rel="stylesheet" href="/vendor/fontawesome/css/font&#45;awesome.min.css"> -->
+  </head>
+  <body style="padding-top: 50px;">
+
+  <div class="container">
+    <form class="form-horizontal">
+      <div class="control-group">
+        <label class="control-label" for="inputBlock">Block</label>
+        <div class="controls">
+          <input type="text" id="inputBlock" placeholder="Block" name="inputBlock">
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="inputLot">Lot</label>
+        <div class="controls">
+          <input type="text" id="inputLot" placeholder="Lot">
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <button type="button" class="btn" onClick="checkLiquifactionStatus();">Search</button>
+        </div>
+      </div>
+    </form>
+
+    <div id="results" role="alert">
+    </div>
+
+  </div>
+  </body>
+</html>

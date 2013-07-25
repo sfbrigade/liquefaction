@@ -2,7 +2,7 @@
   <div class="control-group">
     <label class="control-label" for="inputBlock">Block</label>
     <div class="controls">
-      <input type="text" id="inputBlock" placeholder="Block">
+      <input type="text" id="inputBlock" placeholder="Block" name="inputBlock">
     </div>
   </div>
   <div class="control-group">
@@ -13,10 +13,10 @@
   </div>
   <div class="control-group">
     <div class="controls">
-      <button type="submit" class="btn">Search</button>
+      <button type="button" class="btn" onClick="checkLiquifactionStatus();">Search</button>
     </div>
   </div>
 </form>
 
-<div id="results">
+<div id="results" role="alert">
 </div>
