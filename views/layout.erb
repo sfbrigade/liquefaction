@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sinatra + Twitter Bootstrap</title>
+    <script src="/vendor/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/vendor/fontawesome/css/font-awesome.min.css">
+  </head>
+  <body>
+  <!-- <body style="padding&#45;top: 50px;"> -->
+
+  <!--   <div class="navbar navbar&#45;fixed&#45;top"> -->
+  <!--     <div class="navbar&#45;inner"> -->
+  <!--       <div class="container"> -->
+
+  <!--       </div> -->
+  <!--     </div> -->
+  <!--   </div> -->
+
+
+  <div class="container">
+    <%if @error then %>
+      <div class="alert alert-error"><%=@error%></div>
+    <% end %>
+      <%= yield %>
+  </div>
+  </body>
+</html>
