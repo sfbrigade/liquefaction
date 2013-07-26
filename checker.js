@@ -9,7 +9,6 @@ function checkLiquifactionStatus() {
       console.log("loaded JSON");
       $.each(data, function(key, value) {
         if (value.BLOCK_NUM == $('#inputBlock').val() && value.LOT_NUM == $('#inputLot').val()) {
-          console.log("OMG YOUR HOUSE WILL BE SUCKED INTO THE DEPTHS");
           $('#not-found').hide();
           $('#found').show();
           break;
