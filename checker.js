@@ -11,8 +11,8 @@ function checkLiquifactionStatus() {
         if (value.BLOCK_NUM == $('#inputBlock').val() && value.LOT_NUM == $('#inputLot').val()) {
           $('#not-found').hide();
           $('#found').show();
-          break;
-        } else { 
+          return false;
+        } else {
           $('#not-found').show();
           $('#found').hide();
         }
