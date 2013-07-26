@@ -14,7 +14,7 @@ function checkLiquifactionStatus() {
           return false;
         } else {
           $('#not-found').show("fast", function flash() {
-            $(this).css("background-color", "#FFFBB7")
+            $(this > "#not-found-alert").css("background-color", "#FFFBB7");
           });
           $('#found').hide();
         }
