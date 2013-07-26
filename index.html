@@ -15,6 +15,9 @@
   <body style="padding-top: 50px;">
 
   <div class="container">
+    <noscript>
+      <p>The liquefaction checker requires javascript. Please either turn on Javascript or call (415) 554-4925 for more information on liquefaction.</p>
+    </noscript> 
     <form class="form-horizontal">
       <div class="control-group">
         <label class="control-label" for="inputBlock">Block</label>
@@ -35,11 +38,8 @@
       </div>
     </form>
 
-    <div id="results" role="alert">
-    </div>
-
-    <div id="found">Found</div>
-    <div id="not-found">Not found</div>
+    <div id="found" role="alert">Yes: Your block and lot has been found in the database.</div>
+    <div id="not-found" role="alert">No: Your block and lot has not been found in the database.</div>
   </div>
   </body>
 </html>
