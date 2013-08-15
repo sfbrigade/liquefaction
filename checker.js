@@ -1,4 +1,4 @@
-function checkLiquifactionStatus() {
+function checkliquefactionStatus() {
   resetFound();
 
   $.getJSON('./data.json', function(bl_pairs) {
