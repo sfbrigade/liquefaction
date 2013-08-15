@@ -18,28 +18,44 @@
     <noscript>
       <p>The liquefaction checker requires javascript. Please either turn on Javascript or call (415) 554-4925 for more information on liquefaction.</p>
     </noscript> 
-    <form class="form-horizontal">
-      <div class="control-group">
-        <label class="control-label" for="inputBlock">Block</label>
-        <div class="controls">
-          <input type="text" id="inputBlock" placeholder="Block" name="inputBlock">
+   <div class="row">
+    <div class="span5">
+      
+      <form class="form-horizontal">
+        <div class="control-group">
+          <label class="control-label" for="inputBlock">Block</label>
+          <div class="controls">
+            <input type="text" id="inputBlock" placeholder="Block" name="inputBlock">
+          </div>
         </div>
-      </div>
-      <div class="control-group">
-        <label class="control-label" for="inputLot">Lot</label>
-        <div class="controls">
-          <input type="text" id="inputLot" placeholder="Lot">
+        <div class="control-group">
+          <label class="control-label" for="inputLot">Lot</label>
+          <div class="controls">
+            <input type="text" id="inputLot" placeholder="Lot">
+          </div>
         </div>
-      </div>
-      <div class="control-group">
-        <div class="controls">
-          <button type="button" class="btn" onClick="checkLiquifactionStatus();">Search</button>
+        <div class="control-group">
+          <div class="controls">
+            <button type="button" class="btn" onClick="checkLiquifactionStatus();">Search</button>
+          </div>
         </div>
-      </div>
-    </form>
 
-    <div id="found" role="alert"><span id="found-alert">Yes: Your block and lot has been found in the database.</span></div>
-    <div id="not-found" role="alert"><span id ="not-found-alert">No: Your block and lot has not been found in the database.</span></div>
+        <div class="controls alert alert-block fade in hide" id="not-found" role="alert">
+          <button type="button" class="close"></button>
+          <h4>Not found</h4>
+          Your block <span class="blockNum"></span> and lot <span class="lotNum"></span> has not been found in the database.
+        </div>
+
+        <div class="controls alert alert-block fade in hide" id="found" role="alert">
+          <button type="button" class="close"></button>
+          <h4>Found</h4>
+          We found your block <span class="blockNum"></span> and lot number <span class="lotNum"></span>  in liquifaction database.
+        </div>
+      </form>
+
+    </div>
   </div>
-  </body>
+</div>
+
+</body>
 </html>
