@@ -3,8 +3,24 @@
   <head>
     <title>liquefaction Check 4000</title>
     <script src="./jquery-1.9.1.min.js" type="text/javascript"></script>
-    <style>
-    .form-inline{// Kick in the inline .form-group{display:inline-block;margin-bottom:0;vertical-align:middle}// In navbar-form,allow folks to *not* use `.form-group` .form-control{display:inline-block}.control-label{position:absolute;left:-1000px}#found{display:none}#not-found{display:none}.blockNum{font-weight:700}.lotNum{font-weight:700}
+    <style type="text/css">
+
+    .form-inline > .form-group  {
+      display: inline-block;
+      margin-bottom: 0;
+      vertical-align: middle;
+    }
+    .form-control {
+      display: inline-block;
+    }
+    .control-label {
+      position: absolute;
+      left: -1000px;
+    }
+    #found {display: none;}
+    #not-found {display: none;}
+    .blockNum { font-weight: bold; }
+    .lotNum { font-weight: bold; }
     </style>
   </head>
   <body>
@@ -19,11 +35,11 @@
             <input type="text" id="inputLot" placeholder="Lot">
             <button type="button" class="btn" onClick="checkliquefactionStatus();">Search</button>
         </form><br />
-          <div class="controls alert alert-block fade in hide" id="not-found" role="alert">
+          <div id="not-found" role="alert">
             Your block <span class="blockNum"></span> and lot <span class="lotNum"></span> has not been found in the database.
           </div>
      
-          <div class="controls alert alert-block fade in hide" id="found" role="alert">
+          <div id="found" role="alert">
             We found your block <span class="blockNum"></span> and lot number <span class="lotNum"></span> in liquefaction database.
           </div>
 </body>
