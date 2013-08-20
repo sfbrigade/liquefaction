@@ -3,41 +3,23 @@
   <head>
     <title>liquefaction Check 4000</title>
     <script src="./jquery-1.9.1.min.js" type="text/javascript"></script>
-    <!-- <script src="/vendor/bootstrap/js/bootstrap.min.js"></script> -->
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="/vendor/fontawesome/css/font&#45;awesome.min.css"> -->
     <style>
-    .control-label {
-      position: absolute;
-      left: -1000px;
-    }
-    #found {display: none;}
-    #not-found {display: none;}
-    .blockNum { font-weight: bold; }
-    .lotNum { font-weight: bold; }
+    .form-inline{// Kick in the inline .form-group{display:inline-block;margin-bottom:0;vertical-align:middle}// In navbar-form,allow folks to *not* use `.form-group` .form-control{display:inline-block}.control-label{position:absolute;left:-1000px}#found{display:none}#not-found{display:none}.blockNum{font-weight:700}.lotNum{font-weight:700}
     </style>
   </head>
-  <body style="padding-top: 50px;">
+  <body>
 
-  <div class="container">
     <noscript>
       <p>The liquefaction checker requires javascript. Please either turn on Javascript or call (415) 554-4925 for more information on liquefaction.</p>
     </noscript> 
-   <div class="row">
-      <div class="span10 offset1">
         <form class="form-inline">
-          <div class="control-group">
             <label class="control-label" for="inputBlock">Block</label>
             <input type="text" id="inputBlock" placeholder="Block" name="inputBlock">
             <label class="control-label" for="inputLot">Lot</label>
             <input type="text" id="inputLot" placeholder="Lot">
             <button type="button" class="btn" onClick="checkliquefactionStatus();">Search</button>
-          </div>
-        </form>
-      </div>
-    </div>
-    <div class="row">
-      <div class="span10 offset1">
+        </form><br />
           <div class="controls alert alert-block fade in hide" id="not-found" role="alert">
             Your block <span class="blockNum"></span> and lot <span class="lotNum"></span> has not been found in the database.
           </div>
@@ -45,51 +27,8 @@
           <div class="controls alert alert-block fade in hide" id="found" role="alert">
             We found your block <span class="blockNum"></span> and lot number <span class="lotNum"></span> in liquefaction database.
           </div>
-        </div>
-      </div>
-    </div>
-
 </body>
 <script>
-function checkliquefactionStatus() {
-  resetFound();
-
-  $.getJSON('./data.json', function(bl_pairs) {
-    console.log("loaded JSON");
-    var input_block = $('#inputBlock').val();
-    var input_lot = $('#inputLot').val();
-    $(".blockNum").text(input_block); // Adds the input to the result message.
-    $(".lotNum").text(input_lot); // Adds the input to the result message.
-    
-    // Finding everything matching the block and lot pair.
-    // A result greater than 0 means there is a block and lot pair within the database.
-    if ($.grep(bl_pairs, function(bl_pair, index) {
-      return (bl_pair.BLOCK_NUM == input_block && bl_pair.LOT_NUM == input_lot);
-    }).length > 0) {
-       showFound();
-    }
-    else {
-      showNotFound();
-    }
-  });
-}
-
-function resetFound() {
-  $("#not-found").hide();
-  $("#found").hide();
-}
-
-function showFound() {
-  $("#not-found").hide();
-  $("#found").show();
-  $("#found").attr("tabindex",-1).focus();
-}
-
-function showNotFound() {
-  $("#not-found").show();
-  $("#not-found").attr("tabindex",-1).focus();
-
-  $("#found").hide();
-}
+function checkliquefactionStatus(){resetFound();$.getJSON("./data.json",function(e){console.log("loaded JSON");var t=$("#inputBlock").val();var n=$("#inputLot").val();$(".blockNum").text(t);$(".lotNum").text(n);if($.grep(e,function(e,r){return e.BLOCK_NUM==t&&e.LOT_NUM==n}).length>0){showFound()}else{showNotFound()}})}function resetFound(){$("#not-found").hide();$("#found").hide()}function showFound(){$("#not-found").hide();$("#found").show();$("#found").attr("tabindex",-1).focus()}function showNotFound(){$("#not-found").show();$("#not-found").attr("tabindex",-1).focus();$("#found").hide()}
 </script>
 </html>
