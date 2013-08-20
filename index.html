@@ -17,6 +17,14 @@
       position: absolute;
       left: -1000px;
     }
+
+    .alert {
+      padding: 15px;
+      margin-bottom: 10px;
+      border: 1px solid transparent;
+      background-color: #f0ad4e;
+    }
+
     #found {display: none;}
     #not-found {display: none;}
     .blockNum { font-weight: bold; }
@@ -35,11 +43,11 @@
             <input type="text" id="inputLot" placeholder="Lot">
             <button type="button" class="btn" onClick="checkliquefactionStatus();">Search</button>
         </form><br />
-          <div id="not-found" role="alert">
+          <div class="alert" id="not-found" role="alert">
             Your block <span class="blockNum"></span> and lot <span class="lotNum"></span> has not been found in the database.
           </div>
      
-          <div id="found" role="alert">
+          <div class="alert" id="found" role="alert">
             We found your block <span class="blockNum"></span> and lot number <span class="lotNum"></span> in liquefaction database.
           </div>
 </body>
