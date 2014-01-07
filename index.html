@@ -3,6 +3,7 @@
   <head>
     <title>liquefaction Check 4000</title>
     <script src="./jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="./checker.js" type="text/javascript"></script>
     <style type="text/css">
     .form-inline>.form-group{display:inline-block;margin-bottom:0;vertical-align:middle}.form-control{display:inline-block}.control-label{position:absolute;left:-1000px}.alert{padding:15px;margin-bottom:10px;border:1px solid transparent;background-color:#fcf8e3;color:#918A61;padding:8px 35px 8px 14px}#found{display:none}#not-found{display:none}.blockNum{font-weight:700}.lotNum{font-weight:700}
     </style>
@@ -27,7 +28,4 @@
             We found your block <span class="blockNum"></span> and lot number <span class="lotNum"></span> in liquefaction database.
           </div>
 </body>
-<script>
-function checkliquefactionStatus(){resetFound();$.getJSON("./data.json",function(e){console.log("loaded JSON");var t=$("#inputBlock").val();var n=$("#inputLot").val();$(".blockNum").text(t);$(".lotNum").text(n);if($.grep(e,function(e,r){return e.BLOCK_NUM==t&&e.LOT_NUM==n}).length>0){showFound()}else{showNotFound()}})}function resetFound(){$("#not-found").hide();$("#found").hide()}function showFound(){$("#not-found").hide();$("#found").show();$("#found").attr("tabindex",-1).focus()}function showNotFound(){$("#not-found").show();$("#not-found").attr("tabindex",-1).focus();$("#found").hide()}
-</script>
 </html>
